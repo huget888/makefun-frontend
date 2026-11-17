@@ -1,0 +1,63 @@
+/* make.fun frontend — one small stylesheet, system fonts only, no webfonts. */
+:root { --ink:#16181d; --mut:#5b6470; --line:#e3e6ea; --acc:#0b5cad; --bg:#fff; --card:#f7f8fa; --good:#0a7a3d; --warn:#9a6200; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+a { color:var(--acc); }
+a:hover { text-decoration-thickness:2px; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+.top { display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; max-width:1020px; margin:0 auto; padding:14px 16px; border-bottom:1px solid var(--line); }
+.brand { font-weight:800; font-size:19px; color:var(--ink); text-decoration:none; }
+.brand span { color:var(--acc); }
+.top nav { display:flex; gap:16px; }
+.top nav a { text-decoration:none; font-weight:600; }
+.jump { margin-left:auto; display:flex; gap:6px; }
+.jump input { padding:7px 10px; border:1px solid var(--line); border-radius:8px; font:inherit; width:220px; }
+.jump button, .btn { padding:7px 14px; border:0; border-radius:8px; background:var(--acc); color:#fff; font:inherit; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block; }
+main { max-width:1020px; margin:0 auto; padding:20px 16px 48px; }
+.foot { max-width:1020px; margin:0 auto; padding:16px; border-top:1px solid var(--line); color:var(--mut); font-size:14px; }
+h1 { font-size:28px; line-height:1.2; margin:6px 0 10px; }
+h2 { font-size:20px; margin:28px 0 8px; }
+.mut { color:var(--mut); }
+.loading, .error { padding:24px 0; }
+.error { color:#8f1d1d; }
+.toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0 16px; }
+.toolbar input[type="search"] { padding:8px 10px; border:1px solid var(--line); border-radius:8px; font:inherit; flex:1; min-width:180px; }
+.toolbar select { padding:8px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; }
+.board { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.card { border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--card); }
+.card h2 { margin:0 0 4px; font-size:18px; }
+.card h2 a { color:var(--ink); text-decoration:none; }
+.card h2 a:hover { color:var(--acc); }
+.card .sum { margin:4px 0 10px; color:var(--mut); }
+.meta { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:14px; }
+.meta b { font-size:16px; }
+.pot { color:var(--good); }
+.fee { color:var(--warn); }
+.tag { display:inline-block; padding:1px 8px; border-radius:999px; background:#e8f0fb; color:var(--acc); font-size:13px; font-weight:600; }
+.tag.closed { background:#fdecec; color:#8f1d1d; }
+.facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:16px 0; }
+.facts div { border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+.facts dt { font-size:13px; color:var(--mut); }
+.facts dd { margin:2px 0 0; font-weight:700; font-size:17px; }
+table { border-collapse:collapse; width:100%; font-size:15px; }
+th, td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); }
+th { color:var(--mut); font-size:13px; text-transform:uppercase; letter-spacing:.03em; }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+tr.me td { background:#eef6ee; }
+.desc { white-space:pre-wrap; }
+.desc h3 { margin:18px 0 4px; }
+.crumb { font-size:14px; }
+.pager { display:flex; gap:10px; align-items:center; margin-top:16px; }
+.pager button { padding:7px 14px; border:1px solid var(--line); border-radius:8px; background:#fff; font:inherit; cursor:pointer; }
+.pager button:disabled { opacity:.45; cursor:default; }
+.profile-head { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+.avatar { width:64px; height:64px; border-radius:50%; object-fit:cover; background:#dfe6ee; }
+.avatar-fallback { display:inline-flex; align-items:center; justify-content:center; font-size:26px; font-weight:800; color:#fff; background:var(--acc); }
+@media (max-width:640px) {
+  h1 { font-size:23px; }
+  .jump { margin-left:0; width:100%; }
+  .jump input { flex:1; width:auto; }
+  .top nav { order:3; }
+  table { font-size:14px; }
+  th:nth-child(n+5), td:nth-child(n+5) { display:none; }
+}
